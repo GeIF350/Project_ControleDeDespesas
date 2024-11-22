@@ -29,13 +29,11 @@ const addTransactionIntoDOM = (transaction) => {
 
 // addTransactionIntoDOM(dummyTransactions[0]);
 // addTransactionIntoDOM(dummyTransactions[1]);
-const init = () => {
-    dummyTransactions.forEach(addTransactionIntoDOM);
-    updateBalanceValues();
-}
 
 const updateBalanceValues = () => {
-    const transactionsAmounts = dummyTransactions.map ((transaction) => transaction.amount);
+    const transactionsAmounts = dummyTransactions.map(
+        (transaction) => transaction.amount
+    );
     console.log(transactionsAmounts);
     const total = transactionsAmounts.reduce((accumalator, transaction) => accumalator + transaction, 0).toFixed(2);
     console.log(total);
@@ -53,4 +51,10 @@ const updateBalanceValues = () => {
     console.log(expense);
     
 }
+
+const init = () => {
+    dummyTransactions.forEach(addTransactionIntoDOM);
+    updateBalanceValues();
+}
+
 init();
